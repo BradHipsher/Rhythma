@@ -1,0 +1,12 @@
+extends Node2D
+
+var level_mapping_jank = { 
+
+	# as more levels are added, uncomment below and make the last level end on end screen
+	"Test" : "Test"
+}
+
+func _ready():
+	get_tree().change_scene(Global.add_scn_pth(level_mapping_jank.keys()[0]))
+
+
