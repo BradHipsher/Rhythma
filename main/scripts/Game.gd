@@ -2,7 +2,7 @@ extends Node2D
 
 var level_mapping_jank = { 
 	# as more levels are added, uncomment below and make the last level end on end screen
-	"Calibration" : "..."
+	"Sandbox" : "..."
 }
 
 func _ready():
