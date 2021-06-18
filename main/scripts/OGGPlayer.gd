@@ -2,23 +2,27 @@ extends AudioStreamPlayer
 
 var song_name : String
 var sound_stream : AudioStreamOGGVorbis
+var bpm : float
+var offset : float 
 
-var bpm : float = 130.0
-var mspb : float = 60000.0 / bpm
-var offset : float = 0.0
-var start_play : float = 0.0
-
-const sound_stream_path = Global.music_preloads["9mm"] #Try to figure out how to generalize this...
+var mspb : float 
+var start_play : float
 
 func init(song_nm : String):
+	print("OGGPlayer.gd init")
 	song_name = song_nm
+	sound_stream = Global.music_preloads[song_name]["file"]
+	bpm = Global.music_preloads[song_name]["bpm"]
+	offset = Global.music_preloads[song_name]["offset"]
+	mspb = 60000.0 / bpm
+	start_play = 0.0
 
 func _ready():
-	print(Global.load_cali(song_name))
-	var song_info : Vector2 = Global.load_cali(song_name)
-	bpm = song_info.x
-	offset = song_info.y
-	sound_stream = preload(sound_stream_path)
+	print("OGGPlayer.gd ready")
+#	print(Global.load_cali(song_name))
+#	var song_info : Vector2 = Global.load_cali(song_name)
+#	bpm = song_info.x
+#	offset = song_info.y
 
 func remove_self():
 	queue_free()

@@ -2,7 +2,11 @@ extends Node
 
 ## Music Preloads
 const music_preloads = {
-	"9mm" : "res://main/Music/9mm/9mm.ogg"
+	"9mm" : {
+		"file" : preload("res://main/Music/9mm/9mm.ogg"),
+		"bpm" : 130.0,
+		"offset" : 0.1
+	}
 }
 
 ## I/O
