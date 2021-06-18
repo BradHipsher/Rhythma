@@ -3,9 +3,9 @@ extends AudioStreamPlayer
 var song_name : String
 var sound_stream : AudioStreamOGGVorbis
 
-var bpm : float 
-var mspb : float 
-var offset : float
+var bpm : float = 130.0
+var mspb : float = 60000.0 / bpm
+var offset : float = 0.0
 var start_play : float = 0.0
 
 const sound_stream_path = Global.music_preloads["9mm"] #Try to figure out how to generalize this...
