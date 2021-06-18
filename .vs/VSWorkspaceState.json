@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\main",
+    "\\main\\Music",
+    "\\main\\Music\\9mm",
     "\\main\\scripts"
   ],
-  "SelectedNode": "\\main\\scripts\\Game.gd",
+  "SelectedNode": "\\main\\Music\\9mm\\9mm.dat",
   "PreviewInSolutionExplorer": false
 }

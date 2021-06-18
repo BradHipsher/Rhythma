@@ -1,19 +1,24 @@
 extends Node
 
+## Music Preloads
+const music_preloads = {
+	"9mm" : "res://main/Music/9mm/9mm.ogg"
+}
+
 ## I/O
 func add_scn_pth(scn):
 	return "res://main/screens/"+scn+".tscn"
 
-func save_cali(linest : Vector2):
+func save_cali(song_nm : String, linest : Vector2):
 	var file = File.new()
-	file.open("res://main/Music/9mm/9mm.dat", File.WRITE)
-	file.store_string(str(linest))
+	file.open("res://main/Music/"+song_nm+"/"+song_nm+".dat", File.WRITE)
+	file.store_string(var2str(linest))
 	file.close()
 
-func load_cali():
+func load_cali(song_nm : String):
 	var file = File.new()
-	file.open("res://main/Music/9mm/9mm.dat", File.READ)
-	var content = file.get_as_text()
+	file.open("res://main/Music/"+song_nm+"/"+song_nm+".dat", File.READ)
+	var content : Vector2 = str2var(file.get_as_text())
 	file.close()
 	return content
 
