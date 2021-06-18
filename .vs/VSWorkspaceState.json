@@ -4,8 +4,10 @@
     "\\main",
     "\\main\\Music",
     "\\main\\Music\\9mm",
+    "\\main\\objects",
+    "\\main\\screens",
     "\\main\\scripts"
   ],
-  "SelectedNode": "\\main\\Music\\9mm\\9mm.dat",
+  "SelectedNode": "\\main\\scripts\\Global.gd",
   "PreviewInSolutionExplorer": false
 }

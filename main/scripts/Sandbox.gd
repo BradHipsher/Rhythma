@@ -4,12 +4,12 @@ var time_begin
 var time_delay
 var time
 
-var beat : int = 0
-
 var sound 
-var sound_direct = preload("res://main/objects/OGGPlayer.tscn")
+var sound_direct = preload("res://main/objects/OGGPlayer/OGGPlayer.tscn")
 
 var song_name : String = "9mm"
+
+var counter
 
 onready var time_presses = []
 
@@ -24,15 +24,16 @@ func _ready():
 	
 	sound.play_sound()
 	
+	counter = get_node("Counter")
+	
 	print("sound.bpm: " + str(sound.bpm))
 
 func _process(delta):
 	time = (OS.get_ticks_usec() - time_begin) / 1000000.0
 	time -= time_delay
 	time = max(0,time)
-	if time > beat * 60.0 / sound.bpm + 0.1:
-		beat += 1
-		get_node("Counter").text = str(beat)
+	if time > counter.beat * 60.0 / sound.bpm + 0.1:
+		counter.beat()
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("Tap"):
@@ -40,3 +41,6 @@ func _unhandled_key_input(event):
 	if event.is_action_pressed("Escape"):
 		Global.save_cali("9mm",Global.linest(time_presses))
 		get_tree().quit()
+
+func _on_Counter_pulse():
+	print("pulse")
