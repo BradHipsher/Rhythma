@@ -5,15 +5,18 @@ var music_preloads = {
 	"9mm" : {
 		"file" : load(add_mus_pth("9mm")),
 		"bpm" : 130.0,
-		"offset" : 0.25
+		"offset" : 0.22
 	},
 	
 	"JazzLoop" : {
 		"file" : load(add_mus_pth("JazzLoop")),
 		"bpm" : 112.0,
-		"offset" : 0.25
+		"offset" : 0.22
 	}
 }
+
+## Profile Settings (to be moved later...)
+var pxps_speed : float = 480.0
 
 ## Functionality
 func change_screen(scn, delay = 1.5):
@@ -50,6 +53,16 @@ func add_mus_pth(mus):
 #	var content : Vector2 = str2var(file.get_as_text())
 #	file.close()
 #	return content
+
+## STEPS
+func step_time_to_pos(time : float, pxps_speed : float, x_target : float) -> float:
+	return (x_target + (pxps_speed * time))
+
+func steps_time_to_pos(times : Array, pxps_speed : float, x_target : float) -> Array:
+	var poses : Array = []
+	for time in times:
+		poses.append(step_time_to_pos(time, pxps_speed, x_target))
+	return poses
 
 ## MATHS
 func range0(s : int):

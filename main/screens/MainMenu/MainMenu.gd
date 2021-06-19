@@ -30,7 +30,7 @@ func _on_button_pressed(name):
 		"exit":
 			print("exit")
 
-func _on_OGGPlayer_pulse(beat_send):
+func _on_OGGPlayer_pulse(beat_send, time):
 	get_node("PulsingBkgd/AnimationPlayer").play("pulse")
 	print(str(beat_send))
 

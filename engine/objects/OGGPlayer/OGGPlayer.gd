@@ -1,7 +1,8 @@
 extends AudioStreamPlayer
 
-signal pulse(beat_send)
+signal pulse(beat_send, time_send)
 signal tick(beat_send, time_send)
+signal track_info(song_name, mspb, offset)
 
 onready var beat : int = 0
 
@@ -28,9 +29,10 @@ func init(song_nm : String):
 
 func _ready():
 	print("OGGPlayer.gd ready")
+	print("emitting track_info")
 	time_begin = OS.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
-	
+	emit_signal("track_info", song_name, mspb, offset)
 	play_sound()
 #	print(Global.load_cali(song_name))
 #	var song_info : Vector2 = Global.load_cali(song_name)
@@ -40,15 +42,15 @@ func _ready():
 func _process(delta):
 	time = (OS.get_ticks_usec() - time_begin) / 1000000.0
 	time -= time_delay
-	time = max(0,time)
-	emit_signal("tick",beat,time)
-	if time > beat * 60.0 / bpm + 0.1:
+	#time = max(0,time)
+	if time > beat * 60.0 / bpm + offset:
 		beat()
+	emit_signal("tick",beat,time)
 
 
 func beat():
 	beat += 1
-	emit_signal("pulse", beat)
+	emit_signal("pulse", beat, time)
 
 func remove_self():
 	queue_free()

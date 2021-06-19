@@ -11,17 +11,21 @@ func _ready():
 	print("mainmenu ready")
 	sound = sound_direct.instance()
 	sound.init(song_name)
-	add_child(sound)
 	sound.connect("pulse", self, "_on_OGGPlayer_pulse")
-	sound.connect("tick",self, "on_OGGPlayer_tick")
+	sound.connect("tick",self, "_on_OGGPlayer_tick")
+	sound.connect("track_info", self, "_on_OGGPlayer_track_signal")
+	add_child(sound)
 	print("sound.bpm: " + str(sound.bpm))
 
-func _on_OGGPlayer_pulse(beat_send):
-	pass
+func _on_OGGPlayer_pulse(beat_send, time_send):
+	get_node("Stepper").pulse(beat_send, time_send)
 
-func on_OGGPlayer_tick(beat_send, time_send):
+func _on_OGGPlayer_tick(beat_send, time_send):
 	get_node("Stepper").tick(beat_send, time_send)
 
+func _on_OGGPlayer_track_signal(song_name, mspb, off):
+	print("track signal")
+	get_node("Stepper").set_song(song_name, mspb, off)
 
 #func _unhandled_key_input(event):
 #	if event.is_action_pressed("Tap"):
