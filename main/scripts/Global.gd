@@ -27,10 +27,10 @@ func change_screen(scn, delay = 1.5):
 
 ## I/O
 func add_obj_pth(obj):
-	return "res://main/objects/"+obj+"/"+obj+".tscn"
+	return "res://engine/objects/"+obj+"/"+obj+".tscn"
 
 func add_sfx_pth(sfx):
-	return "res://main/sfx/"+sfx+".ogg"
+	return "res://engine/sfx/"+sfx+".ogg"
 
 func add_scn_pth(scn) :
 	return "res://main/screens/"+scn+"/"+scn+".tscn"

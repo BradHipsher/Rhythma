@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://engine/screens/Sandbox/Sandbox.gd" type="Script" id=1]
+[ext_resource path="res://main/screens/Sandbox/Sandbox.gd" type="Script" id=1]
 [ext_resource path="res://engine/objects/Stepper/Stepper.tscn" type="PackedScene" id=2]
 
 [node name="Sandbox" type="CanvasLayer"]

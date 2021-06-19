@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://engine/objects/Pulsing_Bkgd/Pulsing_Bkgd.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/screens/MainMenu/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://main/screens/MainMenu/MenuItems.gd" type="Script" id=3]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="PulsingBkgd" parent="." instance=ExtResource( 1 )]
+margin_top = -6.15909
+margin_right = 1600.0
+margin_bottom = 900.841
+
+[node name="MenuItems" type="VBoxContainer" parent="."]
+margin_left = 550.0
+margin_top = 360.0
+margin_right = 550.0
+margin_bottom = 360.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

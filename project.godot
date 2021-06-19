@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="Rhythma"
-run/main_scene="res://engine/Game.tscn"
+run/main_scene="res://main/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://engine/scripts/Global.gd"
+Global="*res://main/scripts/Global.gd"
 
 [display]
 
