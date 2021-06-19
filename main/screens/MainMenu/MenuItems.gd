@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-var wavy_menu_item = preload("res://main/objects/Wavy_Menu_Text/Wavy_Menu_Text.tscn")
+var wavy_menu_item = preload("res://engine/objects/Wavy_Menu_Text/Wavy_Menu_Text.tscn")
 
 func _ready():
 	var start = wavy_menu_item.instance()

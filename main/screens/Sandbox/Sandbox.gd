@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var sound 
-var sound_direct = preload("res://main/objects/OGGPlayer/OGGPlayer.tscn")
+var sound_direct = preload("res://engine/objects/OGGPlayer/OGGPlayer.tscn")
 
 var song_name : String = "9mm"
 
