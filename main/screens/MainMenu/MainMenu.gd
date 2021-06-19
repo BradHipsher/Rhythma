@@ -25,6 +25,8 @@ func _on_button_pressed(name):
 	match name:
 		"start":
 			print("start")
+			sound.queue_free()
+			Global.change_screen("Sandbox")
 		"exit":
 			print("exit")
 

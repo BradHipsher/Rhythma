@@ -5,15 +5,19 @@ var music_preloads = {
 	"9mm" : {
 		"file" : load(add_mus_pth("9mm")),
 		"bpm" : 130.0,
-		"offset" : 0.2
+		"offset" : 0.25
 	},
 	
 	"JazzLoop" : {
 		"file" : load(add_mus_pth("JazzLoop")),
 		"bpm" : 112.0,
-		"offset" : 0.2
+		"offset" : 0.25
 	}
 }
+
+## Functionality
+func change_screen(scn):
+	get_tree().change_scene(Global.add_scn_pth(scn))
 
 ## I/O
 func add_scn_pth(scn) :

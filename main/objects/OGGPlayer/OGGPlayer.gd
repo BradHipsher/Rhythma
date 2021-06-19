@@ -1,6 +1,7 @@
 extends AudioStreamPlayer
 
 signal pulse(beat_send)
+signal tick(beat_send, time_send)
 
 onready var beat : int = 0
 
@@ -40,6 +41,7 @@ func _process(delta):
 	time = (OS.get_ticks_usec() - time_begin) / 1000000.0
 	time -= time_delay
 	time = max(0,time)
+	emit_signal("tick",beat,time)
 	if time > beat * 60.0 / bpm + 0.1:
 		beat()
 
