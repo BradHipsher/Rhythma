@@ -1,6 +1,6 @@
 extends Label
 
-signal pulse()
+
 
 onready var beat : int = 0
 

@@ -18,6 +18,11 @@ config/icon="res://icon.png"
 
 Global="*res://main/scripts/Global.gd"
 
+[display]
+
+window/size/width=1600
+window/size/height=900
+
 [input]
 
 Tap={

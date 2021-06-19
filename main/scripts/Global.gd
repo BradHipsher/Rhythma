@@ -5,7 +5,7 @@ const music_preloads = {
 	"9mm" : {
 		"file" : preload("res://main/Music/9mm/9mm.ogg"),
 		"bpm" : 130.0,
-		"offset" : 0.1
+		"offset" : 0.2
 	}
 }
 
