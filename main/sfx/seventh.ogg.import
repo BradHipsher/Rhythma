@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/seventh.ogg-bd42d85ae991063edee03828ef446eed.oggstr"
+
+[deps]
+
+source_file="res://main/sfx/seventh.ogg"
+dest_files=[ "res://.import/seventh.ogg-bd42d85ae991063edee03828ef446eed.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

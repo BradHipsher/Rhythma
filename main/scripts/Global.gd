@@ -16,10 +16,22 @@ var music_preloads = {
 }
 
 ## Functionality
-func change_screen(scn):
-	get_tree().change_scene(Global.add_scn_pth(scn))
+func change_screen(scn, delay = 1.5):
+	var sd = load(add_obj_pth("Sound_Direct")).instance()
+	add_child(sd)
+	var sfx = load(add_sfx_pth("seventh"))
+	sd.play_sound(sfx)
+	yield(get_tree().create_timer(delay), "timeout")
+	sd.queue_free()
+	get_tree().change_scene(add_scn_pth(scn))
 
 ## I/O
+func add_obj_pth(obj):
+	return "res://main/objects/"+obj+"/"+obj+".tscn"
+
+func add_sfx_pth(sfx):
+	return "res://main/sfx/"+sfx+".ogg"
+
 func add_scn_pth(scn) :
 	return "res://main/screens/"+scn+"/"+scn+".tscn"
 
