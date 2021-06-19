@@ -42,12 +42,12 @@ func set_song(song_name, mspb, off):
 	print(beat_map)
 	for beat in beat_map:
 		var new_step = step.instance()
-		new_step.position = Vector2(
+		new_step.position = Vector2( 
+			get_node("Step_Target").position.x,
 			Global.step_time_to_pos(
 				beat,
-				Global.pxps_speed,
-				get_node("Step_Target").position.x), 
-			get_node("Step_Target").position.y)
+				Profile.pxps_speed,
+				get_node("Step_Target").position.y))
 		add_child(new_step)
 
 func _on_Step_Target_stepped(step):

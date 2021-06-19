@@ -1,12 +1,12 @@
 extends Area2D
 
-var starting_x
-var move_rate = Global.pxps_speed # px/s
+var starting_y
+var move_rate = Profile.pxps_speed # px/s
 
 
 func _ready():
-	starting_x = position.x
+	starting_y = position.y
 
 func tick(time):
-	position.x = starting_x - (time * move_rate)
+	position.y = starting_y - (time * move_rate)
 

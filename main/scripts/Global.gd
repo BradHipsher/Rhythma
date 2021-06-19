@@ -15,9 +15,6 @@ var music_preloads = {
 	}
 }
 
-## Profile Settings (to be moved later...)
-var pxps_speed : float = 480.0
-
 ## Functionality
 func change_screen(scn, delay = 1.5):
 	var sd = load(add_obj_pth("Sound_Direct")).instance()
@@ -26,6 +23,9 @@ func change_screen(scn, delay = 1.5):
 	sd.play_sound(sfx)
 	yield(get_tree().create_timer(delay), "timeout")
 	sd.queue_free()
+	change_screen_immediate(scn)
+
+func change_screen_immediate(scn):
 	get_tree().change_scene(add_scn_pth(scn))
 
 ## I/O
@@ -55,13 +55,13 @@ func add_mus_pth(mus):
 #	return content
 
 ## STEPS
-func step_time_to_pos(time : float, pxps_speed : float, x_target : float) -> float:
-	return (x_target + (pxps_speed * time))
+func step_time_to_pos(time : float, pxps_speed : float, y_target : float) -> float:
+	return (y_target + (pxps_speed * time))
 
-func steps_time_to_pos(times : Array, pxps_speed : float, x_target : float) -> Array:
+func steps_time_to_pos(times : Array, pxps_speed : float, y_target : float) -> Array:
 	var poses : Array = []
 	for time in times:
-		poses.append(step_time_to_pos(time, pxps_speed, x_target))
+		poses.append(step_time_to_pos(time, pxps_speed, y_target))
 	return poses
 
 ## MATHS

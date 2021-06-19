@@ -27,9 +27,6 @@ func _on_OGGPlayer_track_signal(song_name, mspb, off):
 	print("track signal")
 	get_node("Stepper").set_song(song_name, mspb, off)
 
-#func _unhandled_key_input(event):
-#	if event.is_action_pressed("Tap"):
-#		time_presses.append(time)
-#	if event.is_action_pressed("Escape"):
-#		Global.save_cali("9mm",Global.linest(time_presses))
-#		get_tree().quit()
+func _unhandled_key_input(event):
+	if event.is_action_pressed("Escape"):
+		Global.change_screen_immediate("MainMenu")
