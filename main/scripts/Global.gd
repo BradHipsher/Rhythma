@@ -1,30 +1,39 @@
 extends Node
 
 ## Music Preloads
-const music_preloads = {
+var music_preloads = {
 	"9mm" : {
-		"file" : preload("res://main/Music/9mm/9mm.ogg"),
+		"file" : load(add_mus_pth("9mm")),
 		"bpm" : 130.0,
+		"offset" : 0.2
+	},
+	
+	"JazzLoop" : {
+		"file" : load(add_mus_pth("JazzLoop")),
+		"bpm" : 112.0,
 		"offset" : 0.2
 	}
 }
 
 ## I/O
-func add_scn_pth(scn):
-	return "res://main/screens/"+scn+".tscn"
+func add_scn_pth(scn) :
+	return "res://main/screens/"+scn+"/"+scn+".tscn"
 
-func save_cali(song_nm : String, linest : Vector2):
-	var file = File.new()
-	file.open("res://main/Music/"+song_nm+"/"+song_nm+".dat", File.WRITE)
-	file.store_string(var2str(linest))
-	file.close()
+func add_mus_pth(mus):
+	return "res://main/music/"+mus+"/"+mus+".ogg"
 
-func load_cali(song_nm : String):
-	var file = File.new()
-	file.open("res://main/Music/"+song_nm+"/"+song_nm+".dat", File.READ)
-	var content : Vector2 = str2var(file.get_as_text())
-	file.close()
-	return content
+#func save_cali(song_nm : String, linest : Vector2):
+#	var file = File.new()
+#	file.open("res://main/music/"+song_nm+"/"+song_nm+".dat", File.WRITE)
+#	file.store_string(var2str(linest))
+#	file.close()
+#
+#func load_cali(song_nm : String):
+#	var file = File.new()
+#	file.open("res://main/music/"+song_nm+"/"+song_nm+".dat", File.READ)
+#	var content : Vector2 = str2var(file.get_as_text())
+#	file.close()
+#	return content
 
 ## MATHS
 func range0(s : int):

@@ -19,6 +19,10 @@ tracks/0/keys = {
 [node name="PanelContainer" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -7.0
+margin_top = -7.0
+margin_right = 14.0
+margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -26,8 +30,9 @@ __meta__ = {
 [node name="Purple" type="ColorRect" parent="."]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1593.0
-margin_bottom = 893.0
+margin_right = 1614.0
+margin_bottom = 914.0
+rect_min_size = Vector2( 1600, 900 )
 color = Color( 0.219608, 0.0901961, 0.196078, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

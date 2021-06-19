@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main/screens/Sandbox/Sandbox.gd" type="Script" id=1]
+[ext_resource path="res://main/objects/Pulsing_Bkgd/Pulsing_Bkgd.tscn" type="PackedScene" id=3]
+
+[node name="Sandbox" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="PanelContainer" parent="." instance=ExtResource( 3 )]
+margin_right = 1600.0
+margin_bottom = 900.0
