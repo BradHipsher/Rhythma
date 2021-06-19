@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/fonts/BRLNSR.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://main/objects/Wavy_Menu_Text/Wavy_Menu_Text.gd" type="Script" id=2]
+[ext_resource path="res://main/objects/Wavy_Menu_Text/MenuItem.gd" type="Script" id=3]
+[ext_resource path="res://main/objects/Wavy_Menu_Text/MenuItemBox.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -20,6 +22,7 @@ __meta__ = {
 }
 
 [node name="MenuItem" type="Area2D" parent="."]
+script = ExtResource( 3 )
 
 [node name="WavyText" type="RichTextLabel" parent="MenuItem"]
 margin_right = 500.0
@@ -37,3 +40,4 @@ __meta__ = {
 [node name="MenuItemBox" type="CollisionShape2D" parent="MenuItem"]
 position = Vector2( 250, 45 )
 shape = SubResource( 2 )
+script = ExtResource( 4 )

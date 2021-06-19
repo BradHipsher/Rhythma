@@ -8,3 +8,4 @@ var level_mapping_jank = {
 func _ready():
 	print("Game.gd ready")
 	get_tree().change_scene(Global.add_scn_pth(level_mapping_jank.keys()[0]))
+
