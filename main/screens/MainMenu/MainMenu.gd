@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 var sound 
 var sound_direct = preload("res://main/objects/OGGPlayer/OGGPlayer.tscn")
@@ -9,15 +9,27 @@ onready var time_presses = []
 
 func _ready():
 	print("mainmenu ready")
-	get_node("MenuItems").conn()
 	sound = sound_direct.instance()
 	sound.init(song_name)
 	add_child(sound)
 	sound.connect("pulse", self, "_on_OGGPlayer_pulse")
 	print("sound.bpm: " + str(sound.bpm))
+	register_buttons()
+
+func register_buttons():
+	var buttons = get_tree().get_nodes_in_group("buttons")
+	for button in buttons:
+		button.connect("pressed", self, "_on_button_pressed", [button.get_parent().name])
+
+func _on_button_pressed(name):
+	match name:
+		"start":
+			print("start")
+		"exit":
+			print("exit")
 
 func _on_OGGPlayer_pulse(beat_send):
-	get_node("PanelContainer/AnimationPlayer").play("pulse")
+	get_node("PulsingBkgd/AnimationPlayer").play("pulse")
 	print(str(beat_send))
 
 func _on_Wavy_Menu_Text_clicked(nm):
