@@ -8,7 +8,6 @@ var song_name : String = "JazzLoop"
 onready var time_presses = []
 
 func _ready():
-	print("Calibration.gd ready")
 	sound = sound_direct.instance()
 	sound.init(song_name)
 	add_child(sound)
