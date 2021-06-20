@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://engine/fonts/BRLNSR.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://engine/objects/Stepper/Stepper.gd" type="Script" id=2]
-[ext_resource path="res://engine/objects/Step_Target/Step_Target.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 54
@@ -23,5 +22,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Step_Target" parent="." instance=ExtResource( 3 )]
-position = Vector2( 800, 64 )
+[node name="Step_Targets_Parent" type="Node" parent="."]

@@ -8,7 +8,6 @@ var song_name : String = "JazzLoop"
 onready var time_presses = []
 
 func _ready():
-	print("mainmenu ready")
 	sound = sound_direct.instance()
 	sound.init(song_name)
 	add_child(sound)
@@ -24,24 +23,22 @@ func register_buttons():
 func _on_button_pressed(name):
 	match name:
 		"start":
-			print("start")
 			sound.queue_free()
 			Global.change_screen("Sandbox")
 		"exit":
-			print("exit")
+			pass
 
 func _on_OGGPlayer_pulse(beat_send, time):
 	get_node("PulsingBkgd/AnimationPlayer").play("pulse")
-	print(str(beat_send))
 
 func _on_Wavy_Menu_Text_clicked(nm):
-	print(nm)
+	pass
 
 func start_game():
-	print("start game")
+	pass
 
 func exit_game():
-	print("exit game")
+	pass
 
 #func _unhandled_key_input(event):
 #	if event.is_action_pressed("Tap"):

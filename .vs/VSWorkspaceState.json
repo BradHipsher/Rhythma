@@ -2,12 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\main",
-    "\\main\\Music",
-    "\\main\\Music\\9mm",
-    "\\main\\objects",
+    "\\main\\music",
+    "\\main\\music\\9mm",
     "\\main\\screens",
     "\\main\\scripts"
   ],
-  "SelectedNode": "\\main\\scripts\\Global.gd",
+  "SelectedNode": "\\main\\music\\9mm\\9mm.txt",
   "PreviewInSolutionExplorer": false
 }

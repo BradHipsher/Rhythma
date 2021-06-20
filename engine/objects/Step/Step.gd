@@ -10,3 +10,5 @@ func _ready():
 func tick(time):
 	position.y = starting_y - (time * move_rate)
 
+func pulse(time):
+	pass
