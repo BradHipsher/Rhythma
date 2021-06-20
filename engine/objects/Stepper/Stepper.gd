@@ -5,11 +5,11 @@ onready var time : float = 0.0
 
 var step = load(Global.add_obj_pth("Step"))
 
-var steps_temp = [
-	21.0, 22.0, 23.0, 24.0, 
-	25.0, 26.0, 27.0, 28.0,
-	29.0, 29.5, 30.0, 31.0, 31.5, 32.0
-]
+var steps_temp = {
+	21.0 : "U", 22.0 : "U", 23.0 : "U", 24.0 : "U", 
+	25.0 : "U", 26.0 : "U", 27.0 : "U", 28.0 : "U",
+	29.0 : "U", 29.5 : "U", 30.0 : "U", 31.0 : "U", 31.5 : "U", 32.0 : "U"
+}
 
 var song_name = ""
 var mspb = 0.0
@@ -37,7 +37,8 @@ func set_song(song_name, mspb, off):
 	self.song_name = song_name
 	self.mspb = mspb
 	self.offset = off
-	for t in steps_temp:
+	var beats_up = Global.split_steps(steps_temp)["U"]
+	for t in beats_up:
 		beat_map.append(calculate_beat(t))
 	print(beat_map)
 	for beat in beat_map:

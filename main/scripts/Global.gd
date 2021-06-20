@@ -64,6 +64,16 @@ func steps_time_to_pos(times : Array, pxps_speed : float, y_target : float) -> A
 		poses.append(step_time_to_pos(time, pxps_speed, y_target))
 	return poses
 
+func split_steps(beats : Dictionary) -> Dictionary:
+	var dict : Dictionary = { "L" : null, "U" : null, "D" : null, "R" : null}
+	for dir in dict.keys():
+		var beat_nums : Array = []
+		for beat in beats.keys():
+			if dir in beats[beat]:
+				beat_nums.append(beat)
+		dict[dir] = beat_nums
+	return dict
+
 ## MATHS
 func range0(s : int):
 	return range(s).pop_back()
